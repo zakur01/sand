@@ -1,0 +1,62 @@
+.alert_module {
+  /* display: none; */
+  color: white;
+  font-size: 24px;
+  display: relative;
+  height: 100vh;
+  margin-top: 0;
+  background-color: rgba(0, 0, 0, 0.753);
+  position: absolute;
+  width: 100vw;
+  z-index: 10000;
+}
+.alert_module-hidden {
+  display: none;
+}
+.alert_module-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* ! ANIMISTA */
+.scale-in-center {
+  -webkit-animation: scale-in-center 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: scale-in-center 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  90% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+}
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  90% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+}

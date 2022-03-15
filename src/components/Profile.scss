@@ -1,0 +1,26 @@
+// .profile {
+//   display: flex;
+//   justify-content: center;
+//   width: 75%;
+//   margin: 0 auto;
+//   .profile_section {
+//   }
+// }
+.image-submit {
+  display: none;
+}
+.image_submit-label {
+  border-radius: 3px;
+  margin: 0 0 20px 0px;
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: rgba(255, 255, 255, 0.616);
+}
+
+.image_submit-label:hover {
+  background-color: #082032;
+  color: white;
+}

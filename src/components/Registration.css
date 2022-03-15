@@ -1,0 +1,37 @@
+.reg_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reg_container form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.reg_container input {
+  padding: 1vh;
+  border: none;
+  background-color: rgba(128, 128, 128, 0.089);
+  border-radius: 3px;
+}
+.reg_container button {
+  padding: 1vh;
+  margin-top: 4vh;
+  border: none;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.425);
+  color: white;
+  cursor: pointer;
+  font-family: 'Manrope', sans-serif;
+  transition: 0.5s all ease;
+}
+
+.reg_container button:hover {
+  background-color: black;
+}
+
+.fin {
+  background-color: black !important;
+}

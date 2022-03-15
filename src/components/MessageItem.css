@@ -1,0 +1,122 @@
+.message_item {
+  border-radius: 3px;
+  box-shadow: #0f3d61 0px 30px 90px;
+  background-color: #05141f;
+  border-radius: 10px;
+  /* padding: 5px; */
+  height: 100%;
+  transition: all 0.5s ease;
+  min-height: 20vh;
+  width: 550px;
+  margin-bottom: 8vh;
+  /* outline: 1px solid rgba(0, 0, 0, 0.089); */
+  /* padding: 0px; */
+  -webkit-animation: fade-in 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fade-in 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.message_item_fadeout {
+  /* border: 1px solid grey; */
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+  /* background-color: rgba(129, 79, 79, 0.062); */
+  height: 100%;
+  width: 550px;
+  margin-bottom: 2vh;
+  padding: 0;
+  -webkit-animation: fade-out 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fade-out 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.message_item-content {
+  /* background-color: rgba(255, 0, 0, 0.247); */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.message_item-content p:first-child {
+  font-size: 0.8rem;
+  /* border: 1px solid rgba(0, 0, 0, 0.055); */
+  border-radius: 3px;
+  /* font-weight: 600; */
+  /* margin-left: 14vw; */
+  align-self: flex-start;
+  /* font-style: italic; */
+  margin: 2vh 0 2vh 3vw;
+  padding: 5px;
+}
+.message_item-content img {
+  margin-top: 20px;
+  width: 60%;
+  opacity: 90%;
+  border-radius: 3px;
+  cursor: pointer;
+  height: auto;
+  margin-bottom: 10px;
+  object-fit: cover;
+  transition: all 0.4s ease;
+}
+
+.message_item-content img:hover {
+  width: 63%;
+  opacity: 100%;
+}
+
+.message_item-delete {
+  margin-right: 2vh;
+  margin-bottom: 1vh;
+  border: none;
+  font-weight: bold;
+  background: rgb(83, 74, 74);
+  color: rgba(255, 0, 0, 0.493);
+  align-self: flex-end;
+  transition: all 0.4s ease;
+  padding: 0.7vh;
+  cursor: pointer;
+}
+.message_item-delete:hover {
+  background-color: rgba(255, 0, 0, 0.493);
+  color: white;
+}
+
+.message_item-content_text {
+  font-size: 18px;
+  /* text-align: left; */
+}
