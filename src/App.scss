@@ -203,6 +203,9 @@ body {
   /* #root {
     max-width: 100vw;
   } */
+  #root {
+    max-width: 100%;
+  }
   .navbar {
     width: 100%;
 
@@ -212,8 +215,18 @@ body {
   }
   .navbar-menu {
     // border: 1px solid red;
-    width: 80%;
+    max-width: 100%;
+    li {
+      font-size: 0.55rem;
+    }
   }
+
+  .navbar-logo {
+    h1 {
+      display: none;
+    }
+  }
+
   .container {
     margin-top: 50px !important;
     padding: 0;
