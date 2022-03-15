@@ -35,3 +35,9 @@
 .fin {
   background-color: black !important;
 }
+
+@media screen and (max-width: 500px) {
+  input {
+    margin-bottom: 2vh;
+  }
+}

@@ -95,7 +95,9 @@ export default function Comments({ Uuser, comments, sent, setSent }) {
 
                 <p>{comment.attributes.content}</p>
                 {User == comment.attributes.us ? (
-                  <button onClick={deleteComment}>X</button>
+                  <button className="button_delete" onClick={deleteComment}>
+                    X
+                  </button>
                 ) : null}
               </div>
             );

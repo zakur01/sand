@@ -67,3 +67,11 @@
   background-color: #082032;
   color: white;
 }
+
+@media screen and (max-width: 500px) {
+  .messages-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

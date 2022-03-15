@@ -96,22 +96,22 @@ function CommentForm({ message_id }) {
           onKeyUp={keyPress}
         />
         <br></br>
+        <label
+          htmlFor="file-upload-comment"
+          className="image_submit-label subpixel-antialiased font-black "
+        >
+          загрузить изображение
+        </label>
+        <p className="mb-4">{imageComment ? imageComment.name : ''}</p>
+        <input
+          className="image-submit"
+          onChange={imageChange}
+          type="file"
+          id="file-upload-comment"
+          name="file"
+        />
         <button type="submit">Отправить комментарий</button>
       </form>
-      <label
-        htmlFor="file-upload-comment"
-        className="image_submit-label subpixel-antialiased font-black "
-      >
-        загрузить изображение
-      </label>
-      <p className="mb-4">{imageComment ? imageComment.name : ''}</p>
-      <input
-        className="image-submit"
-        onChange={imageChange}
-        type="file"
-        id="file-upload-comment"
-        name="file"
-      />
     </div>
   );
 }

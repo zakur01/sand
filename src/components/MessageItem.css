@@ -7,7 +7,7 @@
   height: 100%;
   transition: all 0.5s ease;
   min-height: 20vh;
-  width: 550px;
+  max-width: 550px;
   margin-bottom: 8vh;
   /* outline: 1px solid rgba(0, 0, 0, 0.089); */
   /* padding: 0px; */
@@ -119,4 +119,10 @@
 .message_item-content_text {
   font-size: 18px;
   /* text-align: left; */
+}
+
+@media screen and (max-width: 500px) {
+  .message_item-content {
+    /* border: 1px dotted grey; */
+  }
 }

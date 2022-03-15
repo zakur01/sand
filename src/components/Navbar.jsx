@@ -74,9 +74,9 @@ function Navbar({ hovered, changeHovered }) {
               <Link to="/music">
                 <li>Стена</li>
               </Link>
-              <Link to="/contacts">
+              {/* <Link to="/contacts">
                 <li>Контакты</li>
-              </Link>
+              </Link> */}
               <Link to="/login">
                 <li>Войти</li>
               </Link>

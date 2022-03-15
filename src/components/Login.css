@@ -40,3 +40,14 @@
 .fin {
   background-color: #0f4670 !important;
 }
+
+@media screen and (max-width: 500px) {
+  form {
+    width: 70% !important;
+    font-size: 0.95 rem !important;
+  }
+
+  button {
+    background: rgba(128, 128, 128, 0.247) !important;
+  }
+}

@@ -70,3 +70,24 @@
 .active-icon {
   transform: rotate(180deg);
 }
+
+@media screen and (max-width: 500px) {
+  .comments-container {
+    // border: 1px solid red;
+    gap: 1rem;
+  }
+
+  .comments-container_content {
+    // border: 1px dotted grey;
+  }
+
+  .comments {
+    margin-top: 2rem;
+  }
+  h3 {
+    font-size: 0.8rem;
+  }
+  .button_delete {
+    height: 1rem;
+  }
+}

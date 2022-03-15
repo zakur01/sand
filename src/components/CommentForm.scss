@@ -45,3 +45,29 @@
   background-color: #082032;
   color: white;
 }
+
+@media screen and (max-width: 500px) {
+  textarea {
+    width: 100%;
+  }
+  .comment_form {
+    // border: 1px dotted red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .image_submit-label {
+    margin-top: 0.8rem;
+    margin-bottom: 0;
+    width: 100%;
+
+    font-size: 0.6rem;
+  }
+  button {
+    font-size: 0.8rem;
+    width: 100%;
+    margin-top: 1rem !important;
+    padding: 0.8rem !important;
+  }
+}
