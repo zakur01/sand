@@ -98,9 +98,7 @@ function Music({ changeHovered, setModule }) {
     }
   }
 
-  if (isAuthenticated == false) {
-    navigate('/login');
-  }
+
 
   return (
     <div className="messages-section">
