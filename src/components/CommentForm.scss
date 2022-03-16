@@ -1,6 +1,6 @@
 .comment_form {
   //   border: 1px solid red;
-  margin: 10vh 0 1vh;
+  // margin: 10vh 0 1vh;
   textarea {
     border: none;
     padding: 4px;
@@ -8,7 +8,10 @@
     font-family: 'Manrope', sans-serif;
     border-radius: 3px;
     background: rgba(56, 54, 54, 0.486);
+    margin-bottom: 12px;
     color: white;
+    min-height: 100px;
+    width: 100%;
   }
   button {
     border: none;
@@ -17,7 +20,7 @@
     padding: 15px;
     font-family: 'Manrope', sans-serif;
     // margin-left: 20px;
-    margin-top: 20px;
+    // margin-top: 10px;
     transition: all 0.5s ease;
     cursor: pointer;
     border-radius: 3px;
@@ -32,8 +35,8 @@
 }
 .image_submit-label {
   border-radius: 3px;
-  margin: 0 0 20px 0px;
-  border: 1px solid #ccc;
+  margin: 0;
+  border: 1px solid rgba(204, 204, 204, 0.39);
   display: inline-block;
   padding: 6px 12px;
   cursor: pointer;
@@ -70,4 +73,7 @@
     margin-top: 1rem !important;
     padding: 0.8rem !important;
   }
+}
+.active {
+  display: none;
 }

@@ -9,7 +9,8 @@ import axios from 'axios';
 
 function MessageItem({ id, Uuser, text, setSent, sent, imageItem, comments }) {
   const { User, user_id, token } = useSelector((state) => state.auth);
-  const [image, setImage] = useState('');
+  const [formActive, setFormActive] = useState(true);
+  // const [active2, setActive] = useState(true);
   const [fade, setFade] = useState(false);
   const dispatch = useDispatch();
 
@@ -45,8 +46,21 @@ function MessageItem({ id, Uuser, text, setSent, sent, imageItem, comments }) {
           ) : (
             <img onClick={openImg} src={img}></img>
           )}
-          <CommentForm user_id={user_id} message_id={id} />
-          <Comments comments={comments} />
+          <div className="message_item-comment_section  ">
+            <Comments comments={comments} />
+            <div
+              className="message_item-accordeon cursor-pointer py-2 flex justify-center"
+              onClick={() => setFormActive(!formActive)}
+            >
+              <h3>{formActive ? 'Написать комментарий' : 'Закрыть'}</h3>
+            </div>
+            <CommentForm
+              setFormActive={setFormActive}
+              formActive={formActive}
+              user_id={user_id}
+              message_id={id}
+            />
+          </div>
           <button
             type="button"
             className="message_item-delete"
@@ -59,27 +73,30 @@ function MessageItem({ id, Uuser, text, setSent, sent, imageItem, comments }) {
     );
   } else {
     return (
-      <div className="message_item">
+      <div className={fade ? 'message_item_fadeout' : 'message_item'}>
         <div className="message_item-content">
           <p className="text-sky-200 font-bold">{Uuser}</p>
-          <p className="message_item-content_text">{text}</p>
+          <p>{text}</p>
           {imageItem == ' ' ? (
             <div></div>
           ) : (
             <img onClick={openImg} src={img}></img>
           )}
-          <CommentForm
-            user_id={user_id}
-            message_id={id}
-            setSent={setSent}
-            sent={sent}
-          />
-          <Comments
-            Uuser={Uuser}
-            comments={comments}
-            sent={sent}
-            setSent={setSent}
-          />
+          <div className="message_item-comment_section  ">
+            <Comments comments={comments} />
+            <div
+              className="message_item-accordeon cursor-pointer py-2 flex justify-center"
+              onClick={() => setFormActive(!formActive)}
+            >
+              <h3>{formActive ? 'Написать комментарий' : 'Закрыть'}</h3>
+            </div>
+            <CommentForm
+              setFormActive={setFormActive}
+              formActive={formActive}
+              user_id={user_id}
+              message_id={id}
+            />
+          </div>
         </div>
       </div>
     );

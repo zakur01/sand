@@ -7,7 +7,7 @@ import { GetMessages } from '../features/messageSlice';
 export default function Comments({ Uuser, comments, sent, setSent }) {
   const [users, setUser] = useState();
   const [refresh, setRefresh] = useState(false);
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(true);
 
   const [smh, setSmh] = useState(0);
   const dispatch = useDispatch();
@@ -70,7 +70,7 @@ export default function Comments({ Uuser, comments, sent, setSent }) {
   return (
     <div className="comments ">
       <div
-        className="comments-btn cursor-pointer py-2 flex justify-center"
+        className="comments-btn cursor-pointer m-0 flex justify-center"
         onClick={() => setActive(!active)}
       >
         <h3>{`Комментарии (${comments.length}`})</h3>

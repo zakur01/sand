@@ -104,7 +104,7 @@ function Music({ changeHovered, setModule }) {
 
   return (
     <div className="messages-section">
-      <h1>поместите своё сообщениe...</h1>
+      <h1 className="mb-4">поместите своё сообщениe...</h1>
       <div className="messages-input">
         <form type="submit">
           <label

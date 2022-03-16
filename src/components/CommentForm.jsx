@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { GetMessages } from '../features/messageSlice';
 
-function CommentForm({ message_id }) {
+function CommentForm({ setFormActive, formActive, message_id }) {
   const dispatch = useDispatch();
   const { user_id, token, User } = useSelector((state) => state.auth);
   const [content, setContent] = useState('');
@@ -46,7 +46,7 @@ function CommentForm({ message_id }) {
 
     resComment();
     dispatch(GetMessages());
-
+    setFormActive(!formActive);
     setUsage(usage + 1);
     console.log(resComment);
     setContent('');
@@ -79,6 +79,7 @@ function CommentForm({ message_id }) {
 
       resComment();
       dispatch(GetMessages());
+      setFormActive(!formActive);
       Alert('Вы отправили комментарий', 'Ура!');
 
       setUsage(usage + 1);
@@ -87,7 +88,7 @@ function CommentForm({ message_id }) {
     }
   }
   return (
-    <div className="comment_form">
+    <div className={`comment_form ${formActive ? 'active' : ''}`}>
       <form action="submit" onSubmit={commentSubmit}>
         <textarea
           type="text"
@@ -96,7 +97,7 @@ function CommentForm({ message_id }) {
           onKeyUp={keyPress}
         />
         <br></br>
-        <label
+        {/* <label
           htmlFor="file-upload-comment"
           className="image_submit-label subpixel-antialiased font-black "
         >
@@ -109,7 +110,7 @@ function CommentForm({ message_id }) {
           type="file"
           id="file-upload-comment"
           name="file"
-        />
+        /> */}
         <button type="submit">Отправить комментарий</button>
       </form>
     </div>
