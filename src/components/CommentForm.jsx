@@ -37,7 +37,7 @@ function CommentForm({ setFormActive, formActive, message_id }) {
         },
       };
       return await axios.post(
-        'http://localhost:1337/api/comments?populate=*',
+        'https://strapi-sand.herokuapp.com/api/comments?populate=*',
         formData,
         config
       );
@@ -71,7 +71,7 @@ function CommentForm({ setFormActive, formActive, message_id }) {
           },
         };
         return await axios.post(
-          'http://localhost:1337/api/comments?populate=*',
+          'https://strapi-sand.herokuapp.com/api/comments?populate=*',
           formData,
           config
         );

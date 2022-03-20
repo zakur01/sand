@@ -58,7 +58,9 @@ export default function Comments({ Uuser, comments, sent, setSent }) {
 
     console.log('second_delete');
     const res = async () => {
-      return axios.delete('http://localhost:1337/api/comments/' + id);
+      return axios.delete(
+        'https://strapi-sand.herokuapp.com/api/comments/' + id
+      );
     };
     res();
 

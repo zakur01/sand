@@ -31,10 +31,10 @@ function MessageItem({ id, Uuser, text, setSent, sent, imageItem, comments }) {
   }
 
   function openImg() {
-    window.open(`http://localhost:1337${imageItem}`, '_blank');
+    window.open(`https://strapi-sand.herokuapp.com${imageItem}`, '_blank');
   }
 
-  const img = `http://localhost:1337${imageItem}`;
+  const img = `https://strapi-sand.herokuapp.com${imageItem}`;
   if (Uuser == User) {
     return (
       <div className={fade ? 'message_item_fadeout' : 'message_item'}>
