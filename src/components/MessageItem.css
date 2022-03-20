@@ -104,7 +104,6 @@
 .message_item-delete {
   margin-right: 2vh;
   margin-bottom: 1vh;
-  border: none;
   font-weight: bold;
   background: rgb(83, 74, 74);
   color: rgba(255, 0, 0, 0.493);
@@ -141,5 +140,10 @@
 @media screen and (max-width: 500px) {
   .message_item {
     min-width: 200px;
+  }
+  .message_item-delete {
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 0;
   }
 }
