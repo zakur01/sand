@@ -98,8 +98,6 @@ function Music({ changeHovered, setModule }) {
     }
   }
 
-
-
   return (
     <div className="messages-section">
       <h1 className="mb-4">поместите своё сообщениe...</h1>

@@ -1,5 +1,5 @@
 import axios from 'axios';
-const API_URL = 'http://localhost:1337/api/auth/local/';
+const API_URL = 'https://strapi-sand.herokuapp.com/api/auth/local/';
 
 const login = async (formData) => {
   const res = await axios.post(API_URL + '?populate=*', formData);
