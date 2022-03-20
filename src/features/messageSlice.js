@@ -18,7 +18,7 @@ export const GetMessages = createAsyncThunk(
     try {
       const token = thunkAPI.getState().auth.token;
 
-      return await messageServices.getMessages();
+      return await messageServices.getMessages(token);
     } catch (error) {
       const message =
         (error.response &&

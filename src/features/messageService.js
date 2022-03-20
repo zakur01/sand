@@ -9,7 +9,7 @@ const getMessages = async (token) => {
       Authorization: `Bearer ${token}`,
     },
   };
-  return await axios.get(API_URL_GET);
+  return await axios.get(API_URL_GET, config);
 };
 
 const postMessage = async (payload, token) => {
