@@ -11,7 +11,7 @@ export default function Comments({ Uuser, comments, sent, setSent }) {
 
   const [smh, setSmh] = useState(0);
   const dispatch = useDispatch();
-  const { User } = useSelector((state) => state.auth);
+  const { User, token } = useSelector((state) => state.auth);
   const { messages } = useSelector((state) => state.messages);
   // dispatch(GetMessages());
   // useEffect(() => {
@@ -58,8 +58,14 @@ export default function Comments({ Uuser, comments, sent, setSent }) {
 
     console.log('second_delete');
     const res = async () => {
+      const config = {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
       return axios.delete(
-        'https://strapi-sand.herokuapp.com/api/comments/' + id
+        'https://strapi-sand.herokuapp.com/api/comments/' + id,
+        config
       );
     };
     res();
