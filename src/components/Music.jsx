@@ -53,29 +53,12 @@ function Music({ changeHovered, setModule }) {
   const Submit = (event) => {
     event.preventDefault();
     if (!isAuthenticated) {
-      // alert('you are not logged in!');
       setModule(true);
       setTimeout(() => {
         setModule(false);
       }, 2500);
     }
-    // const res = async () => {
-    //   return await axios.post(
-    //     'http://localhost:1337/api/messages?populate=*',
-    //     formData,
-    //     config
-    //   );
-    // };
     dispatch(PostMessage(formData));
-
-    // if (image !== null) {
-    //   const imageRes = async (e) => {
-    //     let formData = new FormData();
-    //     formData.append('files', image);
-    //     dispatch(Upload(formData));
-    //   };
-    //   imageRes();
-    // }
 
     setSent(sent + 1);
     setContent('');

@@ -14,7 +14,6 @@ function CommentForm({ setFormActive, formActive, message_id }) {
   const [imageComment, setImageComment] = useState(null);
   const [usage, setUsage] = useState(0);
   const formData = new FormData();
-  const user_string = user_id.toString();
   const data = {
     content: content,
     us: User,
