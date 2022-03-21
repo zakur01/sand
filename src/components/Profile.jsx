@@ -29,7 +29,7 @@ function Profile() {
     e.preventDefault();
     const res = async () => {
       return await axios.put(
-        `http://localhost:1337/api/users/${user_id}?populate=*`,
+        `https://strapi-sand.herokuapp.com/api/users/${user_id}?populate=*`,
         formData
       );
     };
@@ -43,14 +43,14 @@ function Profile() {
   };
   const avatarReq = async () => {
     return axios
-      .get('http://localhost:1337/api/users/me', config)
+      .get('https://strapi-sand.herokuapp.com/api/users/me', config)
       .then((req) => {
         setAvatar(req.data.avatar.url);
       });
   };
   avatarReq();
 
-  const img = `http://localhost:1337${avatar}`;
+  const img = `https://strapi-sand.herokuapp.com${avatar}`;
 
   return (
     <div className="profile flex justify-center w-9/12 my-0 mx-auto">
