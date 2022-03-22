@@ -45,7 +45,7 @@ function Profile() {
     return axios
       .get('https://strapi-sand.herokuapp.com/api/users/me', config)
       .then((req) => {
-        setAvatar(req.data.avatar.url);
+        setAvatar(req.data.avatar.url ? req.data.avatar.url : null);
         setUsername(req.data.username);
       });
   };
