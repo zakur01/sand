@@ -45,7 +45,7 @@ function Profile() {
     return axios
       .get('https://strapi-sand.herokuapp.com/api/users/me', config)
       .then((req) => {
-        setAvatar(req.data.avatar.url ? req.data.avatar.url : null);
+        setAvatar(req.data.avatar.url);
         setUsername(req.data.username);
       });
   };
@@ -58,7 +58,7 @@ function Profile() {
       <div className="profile_section">
         <div className="profile_section-name border rounded-lg p-4">
           <h1 className="text-center">{User}</h1>
-          <img src={img} className="p-6" alt="avatar" />
+          <img src={img} className="p-6 max-w-sm" alt="avatar" />
           <form type="submit" onSubmit={avatarChange}>
             <label
               htmlFor="file-upload"
