@@ -60,20 +60,22 @@ function Profile() {
           <h1 className="text-center">{User}</h1>
           <img src={img} className="p-6 max-w-sm" alt="avatar" />
           <form type="submit" onSubmit={avatarChange}>
-            <label
-              htmlFor="file-upload"
-              className="image_submit-label subpixel-antialiased font-black "
-            >
-              загрузить изображение
-            </label>
-            <input
-              className="image-submit"
-              onChange={imageChange}
-              type="file"
-              id="file-upload"
-              name="avatar"
-            />
-            <input type="submit" placeholder="Отправить" value="Отправить" />
+            <div className="form_container">
+              <label
+                htmlFor="file-upload"
+                className="image_submit-label subpixel-antialiased font-black "
+              >
+                загрузить изображение
+              </label>
+              <input
+                className="image-submit"
+                onChange={imageChange}
+                type="file"
+                id="file-upload"
+                name="avatar"
+              />
+              <input type="submit" placeholder="Отправить" value="Отправить" />
+            </div>
           </form>
           {/* <p className="font-light w-60 mt-10 ">
               {' '}
