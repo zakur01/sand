@@ -57,7 +57,7 @@ function Profile() {
     <div className="profile flex justify-center w-9/12 my-0 mx-auto">
       <div className="profile_section">
         <div className="profile_section-name border rounded-lg p-4">
-          <h1 className="text-center">{username2}</h1>
+          <h1 className="text-center">{User}</h1>
           <img src={img} className="p-6" alt="avatar" />
           <form type="submit" onSubmit={avatarChange}>
             <label
