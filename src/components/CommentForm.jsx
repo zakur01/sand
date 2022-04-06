@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { useEffect } from 'react';
 import './CommentForm.scss';
-import { Alert } from 'react-st-modal';
 
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
@@ -41,7 +40,6 @@ function CommentForm({ setFormActive, formActive, message_id }) {
         config
       );
     };
-    Alert('Вы отправили комментарий', 'Ура!');
 
     resComment();
     dispatch(GetMessages());
@@ -79,7 +77,7 @@ function CommentForm({ setFormActive, formActive, message_id }) {
       resComment();
       dispatch(GetMessages());
       setFormActive(!formActive);
-      Alert('Вы отправили комментарий', 'Ура!');
+      // Alert('Вы отправили комментарий', 'Ура!');
 
       setUsage(usage + 1);
       console.log(resComment);

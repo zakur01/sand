@@ -10,7 +10,10 @@ export const Upload = createAsyncThunk(
   'upload/image',
   async (formData, thunkAPI) => {
     try {
-      return await axios.post('http://localhost:1337/api/upload', formData);
+      return await axios.post(
+        'https://strapi-sand.herokuapp.com/api/upload',
+        formData
+      );
     } catch (error) {
       const message =
         (error.response &&
