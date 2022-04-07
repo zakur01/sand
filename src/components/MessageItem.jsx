@@ -31,7 +31,7 @@ function MessageItem({ id, Uuser, text, setSent, sent, imageItem, comments }) {
   }
 
   function openImg() {
-    window.open(`https://strapi-sand.herokuapp.com${imageItem}`, '_blank');
+    window.open(imageItem, '_blank');
   }
 
   const img = `https://strapi-sand.herokuapp.com${imageItem}`;
@@ -44,7 +44,7 @@ function MessageItem({ id, Uuser, text, setSent, sent, imageItem, comments }) {
           {imageItem == ' ' ? (
             <div></div>
           ) : (
-            <img onClick={openImg} src={img}></img>
+            <img onClick={openImg} src={imageItem}></img>
           )}
           <div className="message_item-comment_section  ">
             <Comments comments={comments} />
