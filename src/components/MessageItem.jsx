@@ -80,7 +80,7 @@ function MessageItem({ id, Uuser, text, setSent, sent, imageItem, comments }) {
           {imageItem == ' ' ? (
             <div></div>
           ) : (
-            <img onClick={openImg} src={img}></img>
+            <img onClick={openImg} src={imageItem}></img>
           )}
           <div className="message_item-comment_section  ">
             <Comments comments={comments} />
