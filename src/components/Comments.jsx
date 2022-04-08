@@ -50,6 +50,7 @@ export default function Comments({ Uuser, comments, sent, setSent }) {
 
   function deleteComment(e) {
     // console.log(commentUser);
+    e.preventDefault();
     console.log('first_delete');
     const target = e.target;
     const parent = target.parentElement;
@@ -72,7 +73,9 @@ export default function Comments({ Uuser, comments, sent, setSent }) {
 
     setSmh(smh + 1);
     console.log('third_delete');
-    dispatch(GetMessages());
+    setTimeout(function () {
+      dispatch(GetMessages());
+    }, 1000);
   }
 
   return (

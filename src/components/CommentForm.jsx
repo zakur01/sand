@@ -43,7 +43,7 @@ function CommentForm({ setFormActive, formActive, message_id }) {
 
     resComment();
     dispatch(GetMessages());
-    setFormActive(!formActive);
+    // setFormActive(!formActive);
     setUsage(usage + 1);
     console.log(resComment);
     setContent('');

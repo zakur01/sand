@@ -92,6 +92,7 @@ function Music({ changeHovered, setModule }) {
           >
             загрузить изображение
           </label>
+          <button>Очистить изображение</button>
           <p className="mb-4">{image ? image.name : ''}</p>
           <input
             className="image-submit"

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './MessageItem.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { DeleteMessage, reset } from '../features/messageSlice';
+import { DeleteMessage, GetMessages, reset } from '../features/messageSlice';
 import Comments from './Comments';
 import CommentForm from './CommentForm';
 import { useState } from 'react';
@@ -34,7 +34,7 @@ function MessageItem({ id, Uuser, text, setSent, sent, imageItem, comments }) {
     window.open(imageItem, '_blank');
   }
 
-  const img = `https://strapi-sand.herokuapp.com${imageItem}`;
+  // const img = `https://strapi-sand.herokuapp.com${imageItem}`;
   if (Uuser == User) {
     return (
       <div className={fade ? 'message_item_fadeout' : 'message_item'}>

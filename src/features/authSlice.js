@@ -88,7 +88,6 @@ export const authSlice = createSlice({
         state.User = action.payload.data.user.username;
         state.token = action.payload.data.jwt;
         state.user_id = action.payload.data.user.id;
-        state.message = 'fuck you';
       })
       .addCase(LoginAuth.rejected, (state, action) => {
         state.isError = true;
