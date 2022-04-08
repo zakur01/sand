@@ -1,5 +1,5 @@
 import React from 'react';
-import './Music.css';
+import './Music.scss';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import MessageItem from './MessageItem';
@@ -85,14 +85,14 @@ function Music({ changeHovered, setModule }) {
     <div className="messages-section">
       <h1 className="mb-4">поместите своё сообщениe...</h1>
       <div className="messages-input">
-        <form type="submit">
+        <div type="submit" className="messages-input_first">
           <label
             htmlFor="file-upload"
             className="image_submit-label subpixel-antialiased font-black "
           >
             загрузить изображение
           </label>
-          <button>Очистить изображение</button>
+          <button onClick={() => setImage(null)}>Очистить изображение</button>
           <p className="mb-4">{image ? image.name : ''}</p>
           <input
             className="image-submit"
@@ -101,7 +101,7 @@ function Music({ changeHovered, setModule }) {
             id="file-upload"
             name="file"
           />
-        </form>
+        </div>
         <form onSubmit={Submit}>
           <textarea
             className="messages-input-text"
