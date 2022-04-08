@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { LoginAuth, reset } from '../features/authSlice';
 import AlertModule from '../components/AlertModule';
+import { unwrapResult } from '@reduxjs/toolkit';
 
 function Login({ setModule, changeHovered }) {
   const navigate = useNavigate();
@@ -17,6 +18,7 @@ function Login({ setModule, changeHovered }) {
   // const navigate = useNavigate();
   // const [button, setButton] = useState(false);
   // const [module, setModule] = useState(false);
+  const [error, setError] = useState(null);
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -38,7 +40,10 @@ function Login({ setModule, changeHovered }) {
   const RegSubmit = (e) => {
     e.preventDefault();
     // setButton(true);
-    dispatch(LoginAuth(loginPayload));
+    dispatch(LoginAuth(loginPayload))
+      .then(unwrapResult)
+      .then((obj) => console.log({ obj }))
+      .catch((obj) => setError(obj.data.error.message));
   };
   const initialMount = useRef(true);
 
@@ -61,36 +66,38 @@ function Login({ setModule, changeHovered }) {
     //   dispatch(reset());
     // };
   }, [User]);
-  if (isAuthenticated == true) {
-    navigate('/');
-  } else {
-    return (
-      <div className="reg_container">
-        <form action="" onSubmit={RegSubmit}>
-          <label htmlFor="">Почта</label>
 
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={inputChange}
-            className="mb-4"
-          />
-          <label htmlFor="">Пароль</label>
+  return (
+    <div className="reg_container">
+      <form action="" onSubmit={RegSubmit}>
+        <label htmlFor="">Почта</label>
 
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={inputChange}
-          />
-          <button className="login_button" type="submit">
-            Логин
-          </button>
-        </form>
-      </div>
-    );
-  }
+        <input
+          type="email"
+          name="email"
+          value={email}
+          onChange={inputChange}
+          className="mb-4"
+        />
+        <label htmlFor="">Пароль</label>
+
+        <input
+          type="password"
+          name="password"
+          value={password}
+          onChange={inputChange}
+        />
+        <button className="login_button" type="submit">
+          Логин
+        </button>
+        <p className="text-red-500">
+          {error && error == 'Invalid identifier or password'
+            ? 'Неправильный пароль или логин'
+            : null}
+        </p>
+      </form>
+    </div>
+  );
 }
 
 export default Login;
