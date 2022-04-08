@@ -1,23 +1,24 @@
-.login_container {
+.reg_container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.login_container form {
+.reg_container form {
   display: flex;
   flex-direction: column;
   width: 40%;
 }
 
-.login_container input {
+.reg_container input {
+  margin-top: 0.5rem;
   padding: 1vh;
-  border: none;
+  border: 2px solid rgba(128, 128, 128, 0.384);
   color: white;
-  background-color: rgba(128, 128, 128, 0.089);
+  background-color: black;
   border-radius: 3px;
 }
-.login_container button {
+.reg_container button {
   padding: 1vh;
   margin-top: 4vh;
   border: none;
@@ -30,8 +31,8 @@
   transition: 0.5s all ease;
 }
 
-.login_container button:hover {
-  background-color: #0f4670;
+.reg_container button:hover {
+  background-color: red;
 }
 .login_button:hover {
   background-color: #082032 !important;

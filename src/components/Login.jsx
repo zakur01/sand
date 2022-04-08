@@ -62,34 +62,7 @@ function Login({ setModule, changeHovered }) {
     // };
   }, [User]);
   if (isAuthenticated == true) {
-    return (
-      <div className="login_container">
-        {/* <AlertModule /> */}
-
-        <form action="" onSubmit={RegSubmit}>
-          <label htmlFor="">Почта</label>
-
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={inputChange}
-          />
-          <label htmlFor="">Пароль</label>
-
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={inputChange}
-          />
-
-          <button type="submit" className="login_button">
-            Логин
-          </button>
-        </form>
-      </div>
-    );
+    navigate('/');
   } else {
     return (
       <div className="reg_container">
@@ -101,6 +74,7 @@ function Login({ setModule, changeHovered }) {
             name="email"
             value={email}
             onChange={inputChange}
+            className="mb-4"
           />
           <label htmlFor="">Пароль</label>
 
