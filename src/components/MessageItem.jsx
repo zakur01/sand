@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './MessageItem.css';
+import './MessageItem.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { DeleteMessage, GetMessages, reset } from '../features/messageSlice';
 import Comments from './Comments';
