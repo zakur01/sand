@@ -27,7 +27,7 @@ function CommentForm({ setFormActive, formActive, message_id }) {
   function commentSubmit(e) {
     console.log(formData.data);
     e.preventDefault();
-    dispatch(GetMessages());
+    // dispatch(GetMessages());
     const resComment = async () => {
       const config = {
         headers: {
@@ -42,7 +42,7 @@ function CommentForm({ setFormActive, formActive, message_id }) {
     };
 
     resComment();
-    dispatch(GetMessages());
+    // dispatch(GetMessages());
     // setFormActive(!formActive);
     setUsage(usage + 1);
     console.log(resComment);
@@ -56,6 +56,14 @@ function CommentForm({ setFormActive, formActive, message_id }) {
     setImageComment(e.target.files[0]);
     console.log(e.target.files);
   }
+
+  useEffect(
+    function () {
+      dispatch(GetMessages());
+    },
+    [usage]
+  );
+
   // useEffect(() => {
   // }, [usage]);
   // ! keypress
@@ -75,7 +83,7 @@ function CommentForm({ setFormActive, formActive, message_id }) {
       };
 
       resComment();
-      dispatch(GetMessages());
+      // dispatch(GetMessages());
       setFormActive(!formActive);
       // Alert('Вы отправили комментарий', 'Ура!');
 

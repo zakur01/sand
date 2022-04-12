@@ -1,5 +1,5 @@
 import React from 'react';
-import './Registration.css';
+import './Registration.scss';
 import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
