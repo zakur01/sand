@@ -10,7 +10,7 @@ const login = async (formData) => {
 
 const register = async (formData) => {
   const res = await axios.post(API_URL + 'register', formData);
-  if (res) localStorage.setItem('user', JSON.stringify(res));
+  if (res) localStorage.setItem('user', JSON.stringify(res.data));
   return res;
 };
 const logout = async () => {
