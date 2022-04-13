@@ -44,7 +44,12 @@ function App() {
             ></Route>
             <Route
               path="/registration"
-              element={<Registration changeHovered={changeHovered} />}
+              element={
+                <Registration
+                  setModule={setModule}
+                  changeHovered={changeHovered}
+                />
+              }
             ></Route>
             <Route
               path="/login"

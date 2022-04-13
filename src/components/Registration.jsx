@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { RegAuth } from '../features/authSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
-function Registration({ changeHovered }) {
+function Registration({ setModule, changeHovered }) {
   const { User } = useSelector((state) => state.auth);
   changeHovered(false);
   const dispatch = useDispatch();
@@ -27,20 +27,6 @@ function Registration({ changeHovered }) {
     }));
   };
 
-  // !
-  // useEffect(() => {
-  //   if (
-  //     password.length > 4 &&
-  //     password !== '' &&
-  //     email !== '' &&
-  //     password !== ''
-  //   ) {
-  //     setButton(true);
-  //   } else {
-  //     setButton(false);
-  //   }
-  // }, [password]);
-
   const regPayload = {
     username: username,
     email: email,
@@ -51,7 +37,15 @@ function Registration({ changeHovered }) {
     if (initialMount.current) {
       initialMount.current = false;
     } else {
-      alert(`Вы зарегистрировались как ${User}`);
+      setModule(true);
+      setTimeout(() => {
+        setModule(false);
+      }, 2500);
+
+      setTimeout(() => {
+        navigate('/music');
+      }, 2550);
+      // alert(`Вы зарегистрировались как ${User}`);
     }
   }, [User]);
   const regSubmit = async (e) => {
