@@ -52,14 +52,14 @@
 
 @media screen and (max-width: 500px) {
   textarea {
-    width: 100%;
+    min-width: 100%;
   }
   .comment_form {
     // border: 1px dotted red;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 35rem;
   }
   .image_submit-label {
     margin-top: 0.8rem;

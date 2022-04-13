@@ -52,7 +52,9 @@ function MessageItem({ id, Uuser, text, setSent, sent, imageItem, comments }) {
               className="message_item-accordeon cursor-pointer py-2 flex justify-center"
               onClick={() => setFormActive(!formActive)}
             >
-              <h3>{formActive ? 'Написать комментарий' : 'Закрыть'}</h3>
+              <h3 className="message_item-accordeon-sign">
+                {formActive ? 'Написать комментарий' : 'Закрыть'}
+              </h3>
             </div>
             <CommentForm
               setFormActive={setFormActive}

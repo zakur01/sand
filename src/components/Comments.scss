@@ -80,11 +80,18 @@
   .comments-container {
     // border: 1px solid red;
     gap: 1rem;
+    // max-height: 5rem;
   }
 
   .comments-container_content {
     background: none !important;
-    border: 1px dotted rgb(84, 84, 182);
+    border: 1px dotted rgb(67, 67, 83);
+    text-align: center !important;
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center;
+    // margin-bottom: 4rem;
+    gap: 1rem;
   }
 
   .comments {
@@ -95,5 +102,11 @@
   }
   .button_delete {
     height: 0.5rem;
+    width: 4rem;
+    margin: 0.75rem auto !important;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
