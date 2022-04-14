@@ -9,11 +9,12 @@
   /* border: 1px solid black; */
 }
 .messages {
-  margin-top: 8vh;
+  margin-top: 10vh;
   /* border: 3px purple dotted; */
   /* border: 2px solid green; */
   min-width: 18rem;
   display: flex;
+  gap: 3rem;
   transition: all 0.5s ease;
   flex-direction: column;
 }
@@ -107,6 +108,9 @@
 }
 
 @media screen and (max-width: 500px) {
+  .messages {
+    gap: 1rem;
+  }
   .messages-input {
     display: flex;
     flex-direction: column;
