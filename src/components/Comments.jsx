@@ -84,9 +84,9 @@ export default function Comments({ Uuser, comments, sent, setSent }) {
         className="comments-btn cursor-pointer m-0 flex justify-center"
         onClick={() => setActive(!active)}
       >
-        <h3>{`Комментарии (${comments.length}`})</h3>
-        <div className={`icon ${active ? 'active-icon' : ' '}`}>
-          <i className="ml-2 bx bxs-chevron-down cursor-pointer"></i>
+        <h3 className="mr-1">{`Комментарии (${comments.length}`})</h3>
+        <div className={`icon ${active ? '' : 'active-icon '}`}>
+          <i className=" bx bxs-chevron-down cursor-pointer"></i>
         </div>
       </div>
       <div className={`comments-container ${active ? 'active' : ''}`}>

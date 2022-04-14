@@ -2,17 +2,23 @@
   //   border: 1px solid red;
   // margin: 10vh 0 1vh;
   // position: absolute;
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   textarea {
     border: none;
     padding: 4px;
-    margin: 10px 0 10px 0;
+    margin: 10px 0 0 0;
     font-family: 'Manrope', sans-serif;
     border-radius: 3px;
     background: rgba(56, 54, 54, 0.486);
     margin-bottom: 12px;
     color: white;
     min-height: 100px;
-    width: 100%;
+    min-width: 19rem;
   }
   button {
     border: none;
@@ -20,8 +26,7 @@
     color: rgba(255, 255, 255, 0.411);
     padding: 15px;
     font-family: 'Manrope', sans-serif;
-    // margin-left: 20px;
-    // margin-top: 10px;
+    margin-bottom: 1.8rem;
     transition: all 0.5s ease;
     cursor: pointer;
     border-radius: 3px;

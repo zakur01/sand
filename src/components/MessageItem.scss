@@ -7,7 +7,7 @@
   height: 100%;
   transition: all 0.5s ease;
   min-height: 20vh;
-  min-width: 400px;
+  min-width: 550px;
 
   max-width: 40rem;
   margin-bottom: 8vh;
@@ -15,6 +15,9 @@
   /* padding: 0px; */
   -webkit-animation: fade-in 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   animation: fade-in 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  h3 {
+    // margin: 1rem 0 1rem !important;
+  }
 }
 @-webkit-keyframes fade-in {
   0% {
