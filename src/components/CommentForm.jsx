@@ -1,23 +1,28 @@
 import axios from 'axios';
 import React, { useEffect } from 'react';
 import './CommentForm.scss';
+import 'moment/locale/ru';
+import moment from 'moment';
 
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { GetMessages } from '../features/messageSlice';
-
 function CommentForm({ setFormActive, formActive, message_id }) {
+  moment().locale('ru');
   const dispatch = useDispatch();
   const { user_id, token, User } = useSelector((state) => state.auth);
   const [content, setContent] = useState('');
   const [imageComment, setImageComment] = useState(null);
   const [usage, setUsage] = useState(0);
   const formData = new FormData();
+  const time = new moment().locale('ru').startOf('hour').fromNow();
+
   const data = {
     content: content,
     us: User,
     user_comment: user_id,
     message: message_id,
+    realdate: time,
   };
   formData.append('data', JSON.stringify(data));
   if (imageComment) {

@@ -39,8 +39,10 @@
       "inversedBy": "comments"
     },
     "us": {
-      "type": "string",
-      "default": ""
+      "type": "string"
+    },
+    "realdate": {
+      "type": "string"
     }
   }
 }

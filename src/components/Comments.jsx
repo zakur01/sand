@@ -74,6 +74,9 @@ export default function Comments({ Uuser, comments, sent, setSent }) {
                   fade ? 'fadeout' : ''
                 }`}
               >
+                <p className="comments-container_content-date">
+                  {comment.attributes.realdate}
+                </p>
                 <p className="comments-container_content-p text-sky-200 font-bold ">
                   {comment.attributes.us}
                 </p>
