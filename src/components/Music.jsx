@@ -125,7 +125,6 @@ function Music({ changeHovered, setModule }) {
             value="Отправить"
           />
         </form>
-        <h1>{time}</h1>
       </div>
 
       <div className="messages">
