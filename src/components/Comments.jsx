@@ -8,45 +8,12 @@ export default function Comments({ Uuser, comments, sent, setSent }) {
   const [users, setUser] = useState();
   const [refresh, setRefresh] = useState(false);
   const [active, setActive] = useState(true);
+  const [fade, setFade] = useState(false);
 
   const [smh, setSmh] = useState(0);
   const dispatch = useDispatch();
   const { User, token } = useSelector((state) => state.auth);
   const { messages } = useSelector((state) => state.messages);
-  // dispatch(GetMessages());
-  // useEffect(() => {
-  //   dispatch(GetMessages());
-  // }, [smh]);
-  // dispatch(GetMessages());
-
-  // let commentUser = [];
-  // useEffect(() => {
-  //   console.log('1 useeffect');
-  //   for (let i = 0; i < comments.length; i++) {
-  //     console.log('2 useeffect');
-  //     const res = async () =>
-  //       await axios.get(
-  //         'http://localhost:1337/api/comments/' + comments[i].id + '?populate=*'
-  //       );
-  //     res().then((res) => {
-  //       commentUser.push(
-  //         res.data.data.attributes.user_comment.data.attributes.username
-  //       );
-  //     });
-  //     setUser(commentUser);
-  //   }
-  //   console.log('3 useeffect');
-
-  //   console.log('4 useeffect');
-  //   console.log(commentUser);
-  //   setRefresh(true);
-
-  //   console.log('5 useeffect');
-
-  //   // return () => {
-  //   //   setUser(null);
-  //   // };
-  // }, []);
 
   function deleteComment(e) {
     // console.log(commentUser);
@@ -69,13 +36,18 @@ export default function Comments({ Uuser, comments, sent, setSent }) {
         config
       );
     };
-    res();
-
+    setFade(true);
     setSmh(smh + 1);
     console.log('third_delete');
+    setTimeout(() => {
+      res();
+    }, 1400);
     setTimeout(function () {
       dispatch(GetMessages());
-    }, 1000);
+    }, 1600);
+    setTimeout(function () {
+      setFade(false);
+    }, 2000);
   }
 
   return (
@@ -98,7 +70,9 @@ export default function Comments({ Uuser, comments, sent, setSent }) {
               <div
                 key={comment.id}
                 id={comment.id}
-                className="comments-container_content  "
+                className={`comments-container_content ${
+                  fade ? 'fadeout' : ''
+                }`}
               >
                 <p className="comments-container_content-p text-sky-200 font-bold ">
                   {comment.attributes.us}
