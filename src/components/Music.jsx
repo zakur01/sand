@@ -102,7 +102,7 @@ function Music({ changeHovered, setModule }) {
             name="file"
           />
         </div>
-        <form onSubmit={Submit}>
+        <form className="sendform" onSubmit={Submit}>
           <textarea
             className="messages-input-text"
             name="text"
