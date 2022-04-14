@@ -7,7 +7,16 @@ import CommentForm from './CommentForm';
 import { useState } from 'react';
 import axios from 'axios';
 
-function MessageItem({ id, Uuser, text, setSent, sent, imageItem, comments }) {
+function MessageItem({
+  date,
+  id,
+  Uuser,
+  text,
+  setSent,
+  sent,
+  imageItem,
+  comments,
+}) {
   const { User, user_id, token } = useSelector((state) => state.auth);
   const [formActive, setFormActive] = useState(true);
   // const [active2, setActive] = useState(true);
@@ -39,8 +48,10 @@ function MessageItem({ id, Uuser, text, setSent, sent, imageItem, comments }) {
     return (
       <div className={fade ? 'message_item_fadeout' : 'message_item'}>
         <div className="message_item-content">
+          <p className="message_item-content_date">{date}</p>
           <p className="text-sky-200 font-bold">{Uuser}</p>
-          <p>{text}</p>
+          <p className="messages_item-content_text">{text}</p>
+
           {imageItem == ' ' ? (
             <div></div>
           ) : (
@@ -77,8 +88,10 @@ function MessageItem({ id, Uuser, text, setSent, sent, imageItem, comments }) {
     return (
       <div className={fade ? 'message_item_fadeout' : 'message_item'}>
         <div className="message_item-content">
+          <p className="message_item-content_date">{date}</p>
+
           <p className="text-sky-200 font-bold">{Uuser}</p>
-          <p>{text}</p>
+          <p className="messages_item-content_text">{text}</p>
           {imageItem == ' ' ? (
             <div></div>
           ) : (

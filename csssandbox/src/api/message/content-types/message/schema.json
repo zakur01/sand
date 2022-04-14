@@ -71,6 +71,14 @@
       "relation": "oneToMany",
       "target": "api::like.like",
       "mappedBy": "message"
+    },
+    "realdate": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     }
   }
 }

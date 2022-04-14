@@ -1,4 +1,6 @@
 import React from 'react';
+import 'moment/locale/ru';
+import moment from 'moment';
 import './Music.scss';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
@@ -20,8 +22,11 @@ function Music({ changeHovered, setModule }) {
   );
 
   const navigate = useNavigate();
+  moment().locale('ru');
+  const time = new moment().locale('ru').startOf('hour').fromNow();
 
   useEffect(() => {
+    // console.log(moment().format());
     changeHovered(false);
 
     // const res = await axios.get('http://localhost:1337/api/messages/');
@@ -44,6 +49,7 @@ function Music({ changeHovered, setModule }) {
   const data = {
     text: content,
     user: user_id,
+    realdate: time,
   };
   formData.append('data', JSON.stringify(data));
   if (image) {
@@ -119,6 +125,7 @@ function Music({ changeHovered, setModule }) {
             value="Отправить"
           />
         </form>
+        <h1>{time}</h1>
       </div>
 
       <div className="messages">
@@ -128,6 +135,7 @@ function Music({ changeHovered, setModule }) {
           .map((text3, index) => (
             <MessageItem
               index={index}
+              date={text3.attributes.realdate}
               Uuser={text3.attributes.user.data.attributes.username}
               key={text3.id}
               id={text3.id}
