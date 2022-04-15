@@ -68,6 +68,7 @@ function Music({ changeHovered, setModule }) {
 
     setSent(sent + 1);
     setContent('');
+    setImage(null);
   };
 
   function onChange(e) {
