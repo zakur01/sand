@@ -15,7 +15,7 @@ function CommentForm({ setFormActive, formActive, message_id }) {
   const [imageComment, setImageComment] = useState(null);
   const [usage, setUsage] = useState(0);
   const formData = new FormData();
-  const time = new moment().locale('ru').startOf('hour').fromNow();
+  const time = new moment().locale('ru').format('lll');
 
   const data = {
     content: content,

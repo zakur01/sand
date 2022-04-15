@@ -23,7 +23,7 @@ function Music({ changeHovered, setModule }) {
 
   const navigate = useNavigate();
   moment().locale('ru');
-  const time = new moment().locale('ru').startOf('hour').fromNow();
+  const time = new moment().locale('ru').format('lll');
 
   useEffect(() => {
     // console.log(moment().format());
