@@ -90,7 +90,7 @@ function MessageItem({
         <div className="message_item-content">
           <p className="message_item-content_date">{date}</p>
 
-          <p className="text-sky-200 font-bold">{Uuser}</p>
+          <p className="text-sky-200 mt-4 font-bold">{Uuser}</p>
           <p className="messages_item-content_text">{text}</p>
           {imageItem == ' ' ? (
             <div></div>

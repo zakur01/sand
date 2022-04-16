@@ -124,7 +124,9 @@
   color: white;
 }
 
-.message_item-content_text {
+.messages_item-content_text {
+  padding-top: 0.5rem !important;
+  margin-bottom: 0.75rem;
   font-size: 18px;
   /* text-align: left; */
 }
@@ -159,7 +161,8 @@
     margin-top: 1rem !important;
   }
   .messages_item-content_text {
-    margin-top: 1rem !important;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
+    // padding-top: 1rem !important;
+    margin-bottom: 1rem !important;
   }
 }
