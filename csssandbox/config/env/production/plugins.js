@@ -15,4 +15,13 @@ module.exports = ({ env }) => ({
     },
   },
   // ...
+  "users-permissions": {
+    config: {
+      jwtSecret: process.env.JWT_SECRET || "pass",
+
+      jwt: {
+        expiresIn: "7d",
+      },
+    },
+  },
 });

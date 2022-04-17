@@ -5,12 +5,25 @@ import axios from 'axios';
 import { useSelector } from 'react-redux';
 
 function MainPage({ changeHovered }) {
-  const { isAuthenticated } = useSelector((state) => state.auth);
+  const { isAuthenticated, token } = useSelector((state) => state.auth);
   function mouseEnter() {
     changeHovered(true);
   }
   function mouseLeave() {
     changeHovered(false);
+  }
+  if (isAuthenticated) {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    const me = async () => {
+      return axios
+        .get('https://strapi-sand.herokuapp.com/api/users/me', config)
+        .then((res) => console.log(res));
+    };
+    me();
   }
   return (
     <div className="main-page-container">

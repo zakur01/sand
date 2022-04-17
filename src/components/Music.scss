@@ -133,3 +133,17 @@
     font-size: 0.75rem !important;
   }
 }
+
+.refresh_button {
+  background: url('https://media.giphy.com/media/3og0IMaynocLIk5VUQ/giphy.gif');
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 2rem;
+  font-weight: bold;
+  transition: all 0.4s ease;
+  &:hover {
+    letter-spacing: 0.25rem;
+  }
+}

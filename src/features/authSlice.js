@@ -54,12 +54,33 @@ export const Logout = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
     return await authServices.logout();
   } catch (error) {
     const message =
-      (error.respones && error.response.data && error.response.data.message) ||
+      (error.response && error.response.data && error.response.data.message) ||
       error.response ||
       error.toString();
     return thunkAPI.rejectWithValue(message);
   }
 });
+
+export const RefreshToken = createAsyncThunk(
+  'auth/refreshtoken',
+  async (_, thunkAPI) => {
+    try {
+      const token = thunkAPI.getState().auth.token;
+      const formData = {
+        token: token,
+      };
+      return await authServices.refreshtoken(formData);
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.response ||
+        error.toString();
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
 
 export const authSlice = createSlice({
   name: 'auth',
@@ -110,6 +131,9 @@ export const authSlice = createSlice({
         state.isLoading = false;
         state.isAuthenticated = false;
         state.message = action.payload.data;
+      })
+      .addCase(RefreshToken.fulfilled, (state, action) => {
+        state.token = action.payload.data.jwt;
       });
   },
 });

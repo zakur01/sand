@@ -16,5 +16,12 @@ const register = async (formData) => {
 const logout = async () => {
   localStorage.removeItem('user');
 };
-const authServices = { login, logout, register };
+
+const refreshtoken = async (formData) => {
+  return await axios.post(
+    'https://strapi-sand.herokuapp.com/api/auth/refreshToken',
+    formData
+  );
+};
+const authServices = { login, logout, register, refreshtoken };
 export default authServices;

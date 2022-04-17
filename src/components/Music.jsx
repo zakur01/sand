@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import MessageItem from './MessageItem';
 import { GetMessages, PostMessage, reset } from '../features/messageSlice';
+import { RefreshToken } from '../features/authSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Upload, reset_upload } from '../features/uploadSlice';
@@ -15,6 +16,7 @@ function Music({ changeHovered, setModule }) {
   const [sent, setSent] = useState('');
   const [image, setImage] = useState(null);
   const [nasaImg, setNasaImg] = useState();
+  const [mess, setMess] = useState(null);
   const dispatch = useDispatch();
   const { messages } = useSelector((state) => state.messages);
   const { User, user_id, token, isAuthenticated } = useSelector(
@@ -28,6 +30,7 @@ function Music({ changeHovered, setModule }) {
   useEffect(() => {
     // console.log(moment().format());
     changeHovered(false);
+    setMess(messages);
 
     // const res = await axios.get('http://localhost:1337/api/messages/');
     // setMess(res.data.data);
@@ -41,7 +44,7 @@ function Music({ changeHovered, setModule }) {
     //   dispatch(reset());
     // };c
     // console.log(image_id);
-  }, [messages]);
+  }, [mess]);
   // console.log(mess);
   // console.log(mess);
   // let user_id = User.user.id;
@@ -88,9 +91,15 @@ function Music({ changeHovered, setModule }) {
     }
   }
 
+  async function refreshToken() {
+    dispatch(RefreshToken());
+  }
   return (
     <div className="messages-section">
       <h1 className="mb-4">поместите своё сообщениe...</h1>
+      <button onClick={refreshToken} className="refresh_button">
+        Refresh Token
+      </button>
       <div className="messages-input">
         <div type="submit" className="messages-input_first">
           <label
