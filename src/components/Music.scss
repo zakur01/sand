@@ -57,7 +57,7 @@
 .messages-input-text {
   font-family: 'Manrope', sans-serif;
   resize: none;
-  background: rgba(77, 72, 72, 0.452);
+  background: rgba(64, 83, 121, 0.329);
 
   border: none;
   color: white;
@@ -115,9 +115,38 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 25rem;
+    min-width: 22rem;
+    background: linear-gradient(-45deg, #082032, rgb(8, 0, 0));
+    background-size: 400% 400%;
+    animation: gradient 4s ease infinite;
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    // background: rgba(8, 65, 75, 0.162);
+
+    margin: 1rem 0 0 0;
+
+    padding: 0.75rem 0;
+    // border: 2px rgba(128, 128, 128, 0.158) dotted;
+    border-radius: 10px;
+    box-shadow: #032328 0px 10px 90px 20px;
+
+    &-text {
+      // background-color: #2478b9;
+      height: 7rem;
+    }
     &_first {
       width: 15rem;
+
       button {
         text-align: center;
         font-size: 0.75rem;
@@ -125,17 +154,34 @@
         display: inline-flex;
         justify-content: center;
         align-items: center;
+        letter-spacing: 0.1rem;
         background: none !important;
       }
     }
   }
   .image_submit-label {
     font-size: 0.75rem !important;
+    color: white !important;
+    border: none !important;
+    background: #082032 !important;
+    letter-spacing: 0.1rem;
+  }
+
+  .messages-section_gif {
+    text-align: center;
+    font-size: 1.75rem !important;
+    // outline: 1px solid red;
+  }
+  .messages-input-submit {
+    margin: 0 0 1rem;
+  }
+  .ochi {
+    margin: 0;
   }
 }
 
 .refresh_button {
-  background: url('https://media.giphy.com/media/3og0IMaynocLIk5VUQ/giphy.gif');
+  background: url('https://media.giphy.com/media/xTiTnumdcQABBLgM92/giphy.gif');
   background-size: cover;
   background-position: center;
   -webkit-background-clip: text;
@@ -146,4 +192,20 @@
   &:hover {
     letter-spacing: 0.25rem;
   }
+}
+
+.messages-section_gif {
+  background: url('https://media.giphy.com/media/xTiTnumdcQABBLgM92/giphy.gif');
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 2rem;
+  font-weight: bold;
+  transition: all 0.4s ease;
+  &:hover {
+    letter-spacing: 0.25rem;
+  }
+  // border: 1px solid red;
+  margin-top: -10px;
 }

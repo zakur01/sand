@@ -16,6 +16,7 @@
 a {
   text-decoration: none;
   color: white;
+  // font-size: 2rem;
   // font-size: 30px;
 }
 a:hover {
@@ -91,26 +92,27 @@ body {
 /* !MAIN PAGE */
 .main-page {
   height: 100%;
-  max-width: 80vw;
+  max-width: 100vw;
   display: grid;
   grid-template-columns: 1fr 1fr;
+
   grid-template-rows: 1fr 1fr;
-  grid-gap: 1vw;
-  margin-right: 3vw;
-  margin-left: 5vw;
-  & a,
-  h1 {
-    background: url('https://media.giphy.com/media/3og0IMaynocLIk5VUQ/giphy.gif');
+  grid-gap: 3rem;
+  // margin-right: 3vw;
+  // margin-left: 5vw;
+  & h1 {
+    background: url('https://media.giphy.com/media/xTiTnumdcQABBLgM92/giphy.gif');
     background-size: cover;
     background-position: center;
     -webkit-background-clip: text;
+    backdrop-filter: revert;
     color: transparent;
-    font-size: 2rem;
+    font-size: 4rem;
     font-weight: bold;
-    transition: all 0.4s ease;
-    // &:hover {
-    //   letter-spacing: 0.25rem;
-    // }
+    transition: all 0.2s ease;
+    &:hover {
+      letter-spacing: 0.5rem;
+    }
   }
 }
 
@@ -154,7 +156,6 @@ body {
 }
 
 .main-page-item:hover {
-  background-color: #0f4670;
   color: white;
 }
 .main-page-item a {
@@ -259,6 +260,7 @@ body {
     width: 100%;
     height: 30rem;
     margin: 0;
+    // border: 1px solid red;
   }
 
   .container {

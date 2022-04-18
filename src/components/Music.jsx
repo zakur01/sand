@@ -96,20 +96,18 @@ function Music({ changeHovered, setModule }) {
   }
   return (
     <div className="messages-section">
-      <h1 className="mb-4">поместите своё сообщениe...</h1>
-      <button onClick={refreshToken} className="refresh_button">
+      <h1 className="mb-4 messages-section_gif">поместите своё сообщениe...</h1>
+      {/* <button onClick={refreshToken} className="refresh_button">
         Refresh Token
-      </button>
+      </button> */}
       <div className="messages-input">
         <div type="submit" className="messages-input_first">
-          <label
-            htmlFor="file-upload"
-            className="image_submit-label subpixel-antialiased font-black "
-          >
+          <label htmlFor="file-upload" className="image_submit-label  ">
             загрузить изображение
           </label>
-          <button onClick={() => setImage(null)}>Очистить изображение</button>
-          <p className="mb-4">{image ? image.name : ''}</p>
+
+          <button onClick={() => setImage(null)}>очистить изображение</button>
+          <p className="mb-4 ochi">{image ? image.name : ''}</p>
           <input
             className="image-submit"
             onChange={imageChange}
