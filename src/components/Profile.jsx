@@ -17,24 +17,29 @@ function Profile() {
   };
   // ! create a form data
   const formData = new FormData();
-  // const username = 'Sabina 2';
-  // formData.append('username', username);
-  const data = {};
-  formData.append('data', data);
   if (image) {
-    formData.append('files.avatar', image, image.name);
+    formData.append('files', image);
   }
   // ! submit avatar
   const avatarChange = (e) => {
     e.preventDefault();
     const res = async () => {
-      return await axios.put(
-        `https://strapi-sand.herokuapp.com/api/users/${user_id}?populate=*`,
-        formData
-      );
+      return await axios
+        .post(`https://strapi-sand.herokuapp.com/api/upload/`, formData)
+        .then((res) => {
+          const imageId = res.data[0].id;
+          console.log(imageId);
+          axios
+            .put(`https://strapi-sand.herokuapp.com/api/users/${user_id}`, {
+              avatar: imageId,
+            })
+            .then((res) => console.log(`ПРОВЕРКА ${res.data.data}`));
+        })
+        .catch((error) => console.log(error.message));
     };
-    res().then((response) => console.log(response.data));
+    res();
   };
+
   // ! request your avatar
   const config = {
     headers: {
@@ -44,9 +49,10 @@ function Profile() {
   const avatarReq = async () => {
     return axios
       .get('https://strapi-sand.herokuapp.com/api/users/me', config)
-      .then((req) => {
+      .then((res) => {
         // setAvatar(req.data.avatar.url);
-        setUsername(req.data.username);
+        setAvatar(res.data.avatar.url);
+        console.log(res.data);
       });
   };
   avatarReq();
@@ -58,7 +64,7 @@ function Profile() {
       <div className="profile_section">
         <div className="profile_section-name border rounded-lg p-4">
           <h1 className="text-center">{User}</h1>
-          <img src="" className="p-6 max-w-sm" alt="avatar" />
+          <img src={avatar} className="p-6 max-w-sm" alt="avatar" />
           <form type="submit" onSubmit={avatarChange}>
             <div className="form_container">
               <label
@@ -67,6 +73,7 @@ function Profile() {
               >
                 загрузить изображение
               </label>
+              <h2>{image ? image.name : 's'}</h2>
               <input
                 className="image-submit"
                 onChange={imageChange}
@@ -76,6 +83,7 @@ function Profile() {
               />
               <input type="submit" placeholder="Отправить" value="Отправить" />
             </div>
+            <img src="" alt="" />
           </form>
           {/* <p className="font-light w-60 mt-10 ">
               {' '}
