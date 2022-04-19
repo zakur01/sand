@@ -75,13 +75,17 @@ function MessageItem({
     return (
       <div className={fade ? 'message_item_fadeout' : 'message_item'}>
         <div className="message_item-content">
-          <p className="message_item-content_date">{date}</p>
-          <img
-            src={avatar ? avatar : ''}
-            alt=""
-            className="message_item-content_avatar"
-          />
-          <p className="text-sky-200 font-bold">{Uuser}</p>
+          <div className="message_item-content_section">
+            <div className="message_item-content_section-inner">
+              <img
+                src={avatar ? avatar : ''}
+                alt=""
+                className="message_item-content_avatar"
+              />
+              <p className="text-sky-200 font-bold">{Uuser}</p>
+            </div>
+            <p className="message_item-content_date">{date}</p>
+          </div>
           <p className="messages_item-content_text">{text}</p>
 
           {imageItem == ' ' ? (
@@ -120,13 +124,21 @@ function MessageItem({
     return (
       <div className={fade ? 'message_item_fadeout' : 'message_item'}>
         <div className="message_item-content">
-          <p className="message_item-content_date">{date}</p>
-          {avatar ? (
-            <img src={avatar} alt="" className="message_item-content_avatar" />
-          ) : (
-            ''
-          )}
-          <p className="text-sky-200 mt-4 font-bold">{Uuser}</p>
+          <div className="message_item-content_section">
+            <div className="message_item-content_section-inner">
+              {avatar ? (
+                <img
+                  src={avatar}
+                  alt=""
+                  className="message_item-content_avatar"
+                />
+              ) : (
+                ''
+              )}
+              <p className="text-sky-200 font-bold">{Uuser}</p>
+            </div>
+            <p className="message_item-content_date">{date}</p>
+          </div>
           <p className="messages_item-content_text">{text}</p>
           {imageItem == ' ' ? (
             <div></div>
