@@ -45,29 +45,42 @@ function MessageItem({
     return await axios
       .get(`http://strapi-sand.herokuapp.com/api/users/${userid}`)
       .then((res) => {
-        const avatar_id = res.data.avatar_id;
-        axios
-          .get(
-            `https://strapi-sand.herokuapp.com/api/upload/files/${avatar_id}`
-          )
-          .then((res) => {
-            setAvatar(res.data.url);
-          });
+        if (res.data.avatar_id !== null) {
+          const avatar_id = res.data.avatar_id;
+          axios
+            .get(
+              `https://strapi-sand.herokuapp.com/api/upload/files/${avatar_id}`
+            )
+            .then((res) => {
+              if (res.data.url) {
+                setAvatar(res.data.url);
+              } else {
+                setAvatar('');
+              }
+            });
+        } else {
+          setAvatar('');
+        }
       });
   }
 
   function openImg() {
     window.open(imageItem, '_blank');
   }
-
+  useEffect(() => {
+    getAvatar();
+  }, []);
   // const img = `https://strapi-sand.herokuapp.com${imageItem}`;
   if (Uuser == User) {
     return (
       <div className={fade ? 'message_item_fadeout' : 'message_item'}>
         <div className="message_item-content">
           <p className="message_item-content_date">{date}</p>
-          <button onClick={getAvatar}> Get Avatar </button>
-          <img src={avatar} alt="" className="message_item-content_avatar" />
+          <img
+            src={avatar ? avatar : ''}
+            alt=""
+            className="message_item-content_avatar"
+          />
           <p className="text-sky-200 font-bold">{Uuser}</p>
           <p className="messages_item-content_text">{text}</p>
 
@@ -108,7 +121,11 @@ function MessageItem({
       <div className={fade ? 'message_item_fadeout' : 'message_item'}>
         <div className="message_item-content">
           <p className="message_item-content_date">{date}</p>
-
+          {avatar ? (
+            <img src={avatar} alt="" className="message_item-content_avatar" />
+          ) : (
+            ''
+          )}
           <p className="text-sky-200 mt-4 font-bold">{Uuser}</p>
           <p className="messages_item-content_text">{text}</p>
           {imageItem == ' ' ? (
