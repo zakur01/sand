@@ -11,6 +11,7 @@ function CommentForm({ setFormActive, formActive, message_id }) {
   moment().locale('ru');
   const dispatch = useDispatch();
   const { user_id, token, User } = useSelector((state) => state.auth);
+  const { messages } = useSelector((state) => state.messages);
   const [content, setContent] = useState('');
   const [imageComment, setImageComment] = useState(null);
   const [usage, setUsage] = useState(0);
@@ -47,7 +48,6 @@ function CommentForm({ setFormActive, formActive, message_id }) {
     };
 
     resComment();
-    // dispatch(GetMessages());
     // setFormActive(!formActive);
     setUsage(usage + 1);
     console.log(resComment);
