@@ -88,6 +88,9 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "avatar_id": {
+      "type": "string"
     }
   }
 }

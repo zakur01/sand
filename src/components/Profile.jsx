@@ -28,10 +28,10 @@ function Profile() {
         .post(`https://strapi-sand.herokuapp.com/api/upload/`, formData)
         .then((res) => {
           const imageId = res.data[0].id;
-          console.log(imageId);
           axios
             .put(`https://strapi-sand.herokuapp.com/api/users/${user_id}`, {
               avatar: imageId,
+              avatar_id: JSON.stringify(imageId),
             })
             .then((res) => console.log(`ПРОВЕРКА ${res.data.data}`));
         })
@@ -52,7 +52,7 @@ function Profile() {
       .then((res) => {
         // setAvatar(req.data.avatar.url);
         setAvatar(res.data.avatar.url);
-        console.log(res.data);
+        // console.log(res.data);
       });
   };
   avatarReq();
@@ -73,7 +73,7 @@ function Profile() {
               >
                 загрузить изображение
               </label>
-              <h2>{image ? image.name : 's'}</h2>
+              <h2>{image ? image.name : ''}</h2>
               <input
                 className="image-submit"
                 onChange={imageChange}

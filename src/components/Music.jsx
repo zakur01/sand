@@ -144,6 +144,7 @@ function Music({ changeHovered, setModule }) {
               index={index}
               date={text3.attributes.realdate}
               Uuser={text3.attributes.user.data.attributes.username}
+              userid={text3.attributes.user.data.id}
               key={text3.id}
               id={text3.id}
               text={text3.attributes.text}

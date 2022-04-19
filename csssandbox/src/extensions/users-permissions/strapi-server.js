@@ -31,6 +31,7 @@ module.exports = (plugin) => {
 
     ctx.body = users.map((user) => sanitizeOutput(user));
   };
+
   plugin.controllers.auth.refreshToken = async (ctx) => {
     // refresh userself token
     // const newJwt = strapi.plugins["users-permissions"].services.jwt.issue({
