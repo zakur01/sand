@@ -133,7 +133,7 @@ function MessageItem({
                   className="message_item-content_avatar"
                 />
               ) : (
-                ''
+                <div className="message_item-content_avatar"></div>
               )}
               <p className="text-sky-200 font-bold">{Uuser}</p>
             </div>

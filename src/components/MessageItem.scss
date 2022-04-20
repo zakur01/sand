@@ -83,14 +83,16 @@
     width: 90%;
     margin-top: 0rem;
     // margin-left: -15rem;
-    margin-bottom: -1rem;
+    margin-bottom: 2rem;
     &-inner {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       margin-top: -0.5rem;
+      // min-height: 10rem;
       p {
+        // text-align: left;
         background: url('https://media.giphy.com/media/l41JMGRjtzBAmar5e/giphy.gif');
         background-size: cover;
         background-position: center;
@@ -160,7 +162,8 @@
 
 .messages_item-content_text {
   padding-top: 0.5rem !important;
-  margin-bottom: 0.75rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
   font-size: 18px;
   /* text-align: left; */
 }
