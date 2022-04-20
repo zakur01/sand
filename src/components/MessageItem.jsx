@@ -43,7 +43,7 @@ function MessageItem({
 
   async function getAvatar() {
     return await axios
-      .get(`http://strapi-sand.herokuapp.com/api/users/${userid}`)
+      .get(`https://strapi-sand.herokuapp.com/api/users/${userid}`)
       .then((res) => {
         if (res.data.avatar_id !== null) {
           const avatar_id = res.data.avatar_id;
