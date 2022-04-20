@@ -24,7 +24,7 @@ function Navbar({ hovered, changeHovered }) {
           }
         >
           <div className="navbar-logo">
-            <h1>Logo</h1>
+            <h1>Песочница</h1>
           </div>
           <div className="navbar-menu">
             <ul>
@@ -64,7 +64,7 @@ function Navbar({ hovered, changeHovered }) {
           }
         >
           <div className="navbar-logo">
-            <h1>Logo</h1>
+            <h1>Песочница</h1>
           </div>
           <div className="navbar-menu">
             <ul>

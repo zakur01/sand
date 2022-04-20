@@ -48,9 +48,9 @@ function CommentForm({ setFormActive, formActive, message_id }) {
     };
 
     resComment();
-    // setFormActive(!formActive);
+    setFormActive(!formActive);
+
     setUsage(usage + 1);
-    console.log(resComment);
     setContent('');
   }
   function contentChange(e) {
@@ -65,6 +65,7 @@ function CommentForm({ setFormActive, formActive, message_id }) {
   useEffect(
     function () {
       dispatch(GetMessages());
+      console.log('Get messages comment useEffect!!!');
     },
     [usage]
   );

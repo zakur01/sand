@@ -38,6 +38,7 @@ function Music({ changeHovered, setModule }) {
     // console.log(messages);
 
     dispatch(GetMessages());
+
     // setMess(messages);
     // console.log(mess);
     // return () => {
@@ -96,7 +97,7 @@ function Music({ changeHovered, setModule }) {
   }
   return (
     <div className="messages-section">
-      <h1 className="mb-4 messages-section_gif">поместите своё сообщениe...</h1>
+      <h1 className="mb-4 messages-section_gif">поместите своё сообщениe</h1>
       {/* <button onClick={refreshToken} className="refresh_button">
         Refresh Token
       </button> */}

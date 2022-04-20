@@ -34,11 +34,11 @@ body {
 /* ! HEADER */
 .navbar {
   display: flex;
-  background: #082032;
+  background: #000000;
   color: white;
   justify-content: space-between;
-  padding: 1rem 2rem;
-  transition: all 0.5s ease-in;
+  padding: 1rem 4rem;
+  transition: all 0.5s ease;
   max-width: 100%;
 }
 .navbar a {
@@ -49,7 +49,9 @@ body {
   background: #0f4670;
 }
 .navbar-logo h1 {
-  font-weight: 700;
+  font-weight: 500;
+  letter-spacing: 0.5rem;
+  // font-size: 1.25rem;
   transition: all 0.8s ease;
 }
 
@@ -78,7 +80,7 @@ body {
 
 /* !FOOTER */
 .footer {
-  background-color: #082032;
+  background-color: #000000;
   color: rgba(245, 237, 237, 0.582);
   text-align: center;
   max-width: 100%;
@@ -165,7 +167,7 @@ body {
   color: white;
 }
 .hovered {
-  background-color: #0f4670 !important;
+  // -webkit-background-clip: text;
 }
 
 @media screen and (max-width: 1180px) {
@@ -181,7 +183,7 @@ body {
 
   .container {
     max-height: 100%;
-    // margin-top: 4vh;
+    // margin-top: 4vh
     // border: 1px solid grey;
     padding: 0;
   }
@@ -230,7 +232,7 @@ body {
     max-width: 100%;
   }
   .navbar {
-    background-color: #082032 !important;
+    background-color: #000000 !important;
     // height: 4rem;
     width: 100%;
 

@@ -60,18 +60,18 @@ function Profile() {
   const img = `https://strapi-sand.herokuapp.com${avatar}`;
 
   return (
-    <div className="profile flex justify-center w-9/12 my-0 mx-auto">
+    <div className="profile my-0 mx-auto">
       <div className="profile_section">
-        <div className="profile_section-name border rounded-lg p-4">
+        <div className="profile_section-name  rounded-lg">
           <h1 className="text-center">{User}</h1>
-          <img src={avatar} className="p-6 max-w-sm" alt="avatar" />
+          <img src={avatar} className=" " alt="avatar" />
           <form type="submit" onSubmit={avatarChange}>
             <div className="form_container">
               <label
                 htmlFor="file-upload"
                 className="image_submit-label subpixel-antialiased font-black "
               >
-                загрузить изображение
+                загрузить новую авку
               </label>
               <h2>{image ? image.name : ''}</h2>
               <input
@@ -81,7 +81,7 @@ function Profile() {
                 id="file-upload"
                 name="avatar"
               />
-              <input type="submit" placeholder="Отправить" value="Отправить" />
+              <input type="submit" placeholder="Сменить" value="Сменить" />
             </div>
             <img src="" alt="" />
           </form>
