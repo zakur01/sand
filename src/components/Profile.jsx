@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Profile.scss';
 import axios from 'axios';
+import MessageItem from './MessageItem';
+
 import { useSelector } from 'react-redux';
 
 function Profile() {
@@ -8,6 +10,8 @@ function Profile() {
   const [avatar, setAvatar] = useState();
   const [image, setImage] = useState();
   const [username2, setUsername] = useState();
+  const [messages, setMessages] = useState();
+  const [visible, setVisible] = useState(false);
   // ! image change
   const imageChange = (e) => {
     setImage(e.target.files[0]);
@@ -57,6 +61,21 @@ function Profile() {
   };
   avatarReq();
 
+  const getUserMessages = async () => {
+    return await axios
+      .get(
+        `http://strapi-sand.herokuapp.com/api/messages?filters[user][id][$eq]=${user_id}&populate=*`
+      )
+      .then((res) => {
+        setMessages(res.data.data);
+        console.log(res.data.data);
+        // console.log(messages);
+      });
+  };
+  useEffect(() => {
+    getUserMessages();
+  }, []);
+
   const img = `https://strapi-sand.herokuapp.com${avatar}`;
 
   return (
@@ -67,12 +86,12 @@ function Profile() {
           <img src={avatar} className=" " alt="avatar" />
           <form type="submit" onSubmit={avatarChange}>
             <div className="form_container">
-              <label
+              <button
                 htmlFor="file-upload"
-                className="image_submit-label subpixel-antialiased font-black "
+                className="image_submit-label  font-black "
               >
                 загрузить новую авку
-              </label>
+              </button>
               <h2>{image ? image.name : ''}</h2>
               <input
                 className="image-submit"
@@ -81,14 +100,54 @@ function Profile() {
                 id="file-upload"
                 name="avatar"
               />
-              <input type="submit" placeholder="Сменить" value="Сменить" />
+              <input
+                className="image_submit-label"
+                type="submit"
+                placeholder="Сменить"
+                value="Сменить"
+              />
             </div>
-            <img src="" alt="" />
+            {/* <img src="" alt="" /> */}
           </form>
           {/* <p className="font-light w-60 mt-10 ">
               {' '}
               Здесь должен быть аватар, но не могу сфетчить его с помощью populate
             </p> */}
+          <button className="show_button" onClick={() => setVisible(!visible)}>
+            Показать свои сообщения
+          </button>
+          <div className={visible ? 'messages' : 'messages_closed'}>
+            {messages
+              ? messages
+                  .slice(0)
+                  .reverse()
+                  .map((text3, index) => (
+                    <MessageItem
+                      index={index}
+                      date={text3.attributes.realdate}
+                      Uuser={text3.attributes.user.data.attributes.username}
+                      userid={text3.attributes.user.data.id}
+                      key={text3.id}
+                      id={text3.id}
+                      text={text3.attributes.text}
+                      // setSent={setSent}
+                      // sent={sent}
+                      imageItem={
+                        text3.attributes.image.data !== null
+                          ? text3.attributes.image.data.attributes.url
+                          : ' '
+                      }
+                      comments={
+                        text3.attributes.comments.data !== null ? (
+                          text3.attributes.comments.data
+                        ) : (
+                          <h1>error</h1>
+                        )
+                      }
+                    />
+                  ))
+              : ''}
+          </div>
         </div>
       </div>
     </div>
