@@ -31,7 +31,7 @@ function CommentForm({ setFormActive, formActive, message_id }) {
   }
 
   function commentSubmit(e) {
-    console.log(formData.data);
+    // console.log(formData.data);
     e.preventDefault();
     // dispatch(GetMessages());
     const resComment = async () => {
@@ -94,7 +94,7 @@ function CommentForm({ setFormActive, formActive, message_id }) {
       // Alert('Вы отправили комментарий', 'Ура!');
 
       setUsage(usage + 1);
-      console.log(resComment);
+      // console.log(resComment);
       setContent('');
     }
   }

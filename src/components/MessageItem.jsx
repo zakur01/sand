@@ -70,6 +70,9 @@ function MessageItem({
   useEffect(() => {
     getAvatar();
   }, []);
+  // useEffect(() => {
+  //   dispatch(GetMessages());
+  // }, [comments]);
   // const img = `https://strapi-sand.herokuapp.com${imageItem}`;
   if (Uuser == User) {
     return (

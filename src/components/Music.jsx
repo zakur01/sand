@@ -27,25 +27,25 @@ function Music({ changeHovered, setModule }) {
   moment().locale('ru');
   const time = new moment().locale('ru').format('lll');
 
-  useEffect(() => {
-    // console.log(moment().format());
-    changeHovered(false);
-    setMess(messages);
+  // useEffect(() => {
+  //   // console.log(moment().format());
+  //   changeHovered(false);
+  //   setMess(messages);
 
-    // const res = await axios.get('http://localhost:1337/api/messages/');
-    // setMess(res.data.data);
+  //   // const res = await axios.get('http://localhost:1337/api/messages/');
+  //   // setMess(res.data.data);
 
-    // console.log(messages);
+  //   // console.log(messages);
 
-    dispatch(GetMessages());
+  //   dispatch(GetMessages());
 
-    // setMess(messages);
-    // console.log(mess);
-    // return () => {
-    //   dispatch(reset());
-    // };c
-    // console.log(image_id);
-  }, [mess]);
+  //   // setMess(messages);
+  //   // console.log(mess);
+  //   // return () => {
+  //   //   dispatch(reset());
+  //   // };c
+  //   // console.log(image_id);
+  // }, [mess]);
   // console.log(mess);
   // console.log(mess);
   // let user_id = User.user.id;
