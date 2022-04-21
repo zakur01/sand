@@ -50,6 +50,10 @@ export default function Comments({ Uuser, comments, sent, setSent }) {
     }, 2000);
   }
 
+  useEffect(() => {
+    dispatch(GetMessages());
+  }, []);
+
   return (
     <div className="comments ">
       <div

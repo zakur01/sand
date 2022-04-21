@@ -49,8 +49,8 @@ function CommentForm({ setFormActive, formActive, message_id }) {
 
     resComment();
     setFormActive(!formActive);
-
     setUsage(usage + 1);
+    console.log(`Usage: ${usage}`);
     setContent('');
   }
   function contentChange(e) {
