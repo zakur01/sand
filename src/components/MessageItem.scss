@@ -37,14 +37,20 @@
 }
 
 .message_item_fadeout {
-  /* border: 1px solid grey; */
-  display: flex;
-  flex-direction: column;
   border-radius: 3px;
-  /* background-color: rgba(129, 79, 79, 0.062); */
+  box-shadow: #0f3d61 0px 30px 90px;
+  background-color: #05141f;
+  border-radius: 10px;
+  /* padding: 5px; */
   height: 100%;
-  width: 550px;
-  margin-bottom: 2vh;
+  transition: all 0.5s ease;
+  min-height: 20vh;
+  min-width: 550px;
+
+  max-width: 40rem;
+  margin-bottom: 8vh;
+  outline: 1px solid rgba(0, 0, 0, 0.089);
+
   padding: 0;
   -webkit-animation: fade-out 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   animation: fade-out 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;

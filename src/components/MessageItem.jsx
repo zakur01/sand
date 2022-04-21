@@ -69,6 +69,7 @@ function MessageItem({
   }
   useEffect(() => {
     getAvatar();
+    console.log(fade);
   }, []);
   // useEffect(() => {
   //   dispatch(GetMessages());

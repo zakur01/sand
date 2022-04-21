@@ -9,7 +9,7 @@ function Navbar({ hovered, changeHovered }) {
     dispatch(reset());
     localStorage.removeItem('user');
   };
-  const { isAuthenticated } = useSelector((state) => state.auth);
+  const { isAuthenticated, User } = useSelector((state) => state.auth);
   if (isAuthenticated) {
     return (
       <div
@@ -36,7 +36,7 @@ function Navbar({ hovered, changeHovered }) {
               </Link>
               <Link to="/profile">
                 {' '}
-                <li>Профиль</li>
+                <li>Профиль ({User}) </li>
               </Link>
               <Link to="/" onClick={Logout2}>
                 {' '}
