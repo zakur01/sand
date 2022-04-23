@@ -85,7 +85,12 @@ function Profile() {
     <div className="profile my-0 mx-auto">
       <div className="profile_section">
         <div className="profile_section-name  rounded-lg">
-          <h1 className="text-center mb-4">{User}</h1>
+          <h1
+            className="font-bold text-center mb-4
+          "
+          >
+            {User}
+          </h1>
           <img src={avatar} className=" " alt="avatar" />
           <form type="submit" onSubmit={avatarChange}>
             <div className="form_container">

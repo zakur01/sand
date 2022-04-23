@@ -15,6 +15,7 @@
   margin: 0 !important;
 
   // width: 25rem;
+  margin-top: -4rem !important;
   // border: 1px solid red;
   img {
     width: 25rem;
@@ -74,6 +75,11 @@
   padding: 1rem;
   border-radius: 3px;
   margin-bottom: 2rem;
+  transition: all 0.4s ease;
+  &:hover {
+    background: white;
+    color: rgb(9, 65, 116);
+  }
 }
 
 @media screen and (min-width: 900px) {
