@@ -14,7 +14,9 @@ function Profile() {
   const [visible, setVisible] = useState(false);
   // ! image change
   const imageChange = (e) => {
+    // setAvatar(e.target.files[0]);
     setImage(e.target.files[0]);
+
     setTimeout(() => {
       console.log(image);
     }, 3000);
@@ -42,6 +44,7 @@ function Profile() {
         .catch((error) => console.log(error.message));
     };
     res();
+    avatarReq();
   };
 
   // ! request your avatar
@@ -59,7 +62,6 @@ function Profile() {
         // console.log(res.data);
       });
   };
-  avatarReq();
 
   const getUserMessages = async () => {
     return await axios
@@ -73,6 +75,7 @@ function Profile() {
       });
   };
   useEffect(() => {
+    avatarReq();
     getUserMessages();
   }, []);
 
@@ -82,16 +85,16 @@ function Profile() {
     <div className="profile my-0 mx-auto">
       <div className="profile_section">
         <div className="profile_section-name  rounded-lg">
-          <h1 className="text-center">{User}</h1>
+          <h1 className="text-center mb-4">{User}</h1>
           <img src={avatar} className=" " alt="avatar" />
           <form type="submit" onSubmit={avatarChange}>
             <div className="form_container">
-              <button
+              <label
                 htmlFor="file-upload"
                 className="image_submit-label  font-black "
               >
                 загрузить новую авку
-              </button>
+              </label>
               <h2>{image ? image.name : ''}</h2>
               <input
                 className="image-submit"
@@ -101,13 +104,12 @@ function Profile() {
                 name="avatar"
               />
               <input
-                className="image_submit-label"
+                className="image_submit"
                 type="submit"
                 placeholder="Сменить"
                 value="Сменить"
               />
             </div>
-            {/* <img src="" alt="" /> */}
           </form>
           {/* <p className="font-light w-60 mt-10 ">
               {' '}
@@ -115,6 +117,7 @@ function Profile() {
             </p> */}
           <button className="show_button" onClick={() => setVisible(!visible)}>
             Показать свои сообщения
+            <i className=" ml-2 bx bxs-chevron-down cursor-pointer"></i>
           </button>
           <div className={visible ? 'messages' : 'messages_closed'}>
             {messages

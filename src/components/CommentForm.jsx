@@ -33,6 +33,7 @@ function CommentForm({ setFormActive, formActive, message_id }) {
   function commentSubmit(e) {
     // console.log(formData.data);
     e.preventDefault();
+    e.persist();
     // dispatch(GetMessages());
     const resComment = async () => {
       const config = {
@@ -52,6 +53,7 @@ function CommentForm({ setFormActive, formActive, message_id }) {
     setUsage(usage + 1);
     console.log(`Usage: ${usage}`);
     setContent('');
+    dispatch(GetMessages());
   }
   function contentChange(e) {
     setContent(e.target.value);
@@ -74,6 +76,8 @@ function CommentForm({ setFormActive, formActive, message_id }) {
   // }, [usage]);
   // ! keypress
   function keyPress(e) {
+    e.preventDefault();
+    // e.persist();
     if (e.ctrlKey && e.key == 'Enter') {
       const resComment = async () => {
         const config = {
@@ -95,9 +99,11 @@ function CommentForm({ setFormActive, formActive, message_id }) {
 
       setUsage(usage + 1);
       // console.log(resComment);
+      dispatch(GetMessages());
       setContent('');
     }
   }
+
   return (
     <div className={`comment_form ${formActive ? 'active' : ''}`}>
       <form action="submit" onSubmit={commentSubmit}>

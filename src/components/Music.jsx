@@ -45,7 +45,7 @@ function Music({ changeHovered, setModule }) {
     //   dispatch(reset());
     // };c
     // console.log(image_id);
-  }, [mess]);
+  }, []);
   // console.log(mess);
   // console.log(mess);
   // let user_id = User.user.id;
